@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+      <head>
+	        <title>Exercise 1</title>
+			<script >
+			
+			function addNumbers(){
+                 var total = 0;
+				 var amount = [1,2,4,1,4];
+                 for (i = 0; i < amount.length; i++) {
+                       total += amount[i]; // add each element in an array to total
+                      }
+       
+					document.write(amount + " -> " +total);
+                }
+				
+			function getCurrentDate(){
+				var myDate = new Date();
+				var year = myDate.getYear();
+				    if(year < 1000){
+					    year +=1900;
+					}
+				var day = myDate.getDay();
+				var month = myDate.getMonth();
+				var daym = myDate.getDate();
+				var dayArray = ["Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"];
+				var monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+				var myClock = document.write(dayArray[day]+ ", "+ monthArray[month]+ " " +daym+", " + year);
+			}
+			
+			function arrayToString(){
+			    var a =["one","two","three", "testing"];
+                var s = a.join(" ");
+				document.write(s);
+			}
+			
+			function findMaxNumber(){
+	            var numbers = [1, 2, 5, 3];
+                document.write(Math.max.apply(null, numbers)); 
+			}
+			
+			function getDigits(strValue){
+			var strValue;
+            var intValue = parseInt(strValue.replace(/[^0-9\.]/g, ''));
+            document.write(intValue);
+	
+			}
+			
+			function reverseString(s){
+			s = s.split('');
+            var len = s.length,
+            halfIndex = Math.floor(len / 2) - 1,
+            tmp;
+            for (var i = 0; i <= halfIndex; i++) {
+            tmp = s[len - i - 1];
+            s[len - i - 1] = s[i];
+            s[i] = tmp;
+            }
+            document.write(s.join(''));
+		    }
+				
+			</script>
+	  </head>
+	  
+	  
+	  <body>
+	        <h4>addNumbers</h4>
+	        <script>addNumbers();</script>
+			
+			<h4>getCurrentDate</h4>
+			<script>getCurrentDate(); </script>
+			
+			<h4>arrayToString</h4>
+			<script>arrayToString();</script>
+			
+			<h4>findMaxNumber</h4>
+			<script>findMaxNumber();</script>
+			
+			<h4>getDigits</h4>
+			<script>getDigits("sdfda3fdsfdfs5fds11dsf");</script>
+			
+			<h4>reverseString</h4>
+			<script> reverseString("string");</script>
+	  
+	  </body>
+
+</html>

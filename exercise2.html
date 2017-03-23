@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise 2</title>
+</head>
+
+<body>
+<form>
+
+<fieldset style='display:inline';>
+<h3>Celsius:"C" Fahrenheit:"F" Kelvin:"K"</h3>
+
+<br />
+<label for="value">Temperature</label>
+<input type="text" id="value">
+<select name="converts" id="Selection">
+   
+    <option value="c" >C</option>
+    <option value="f" >F</option>
+    <option value="k" >K</option>
+    
+</select>
+<br/><br>
+
+
+<label for="conversion">Result</label>
+<input type="text" name="tb1" id="textBoxHtml" />
+<input type="Button" onclick="Conversion()" value="Convert">
+</fieldset>
+</form>
+
+
+<script>
+function Conversion() {
+    var value = document.getElementById("value").value,
+        conversion = document.getElementById("conversion"),
+        madeSelection = document.getElementById("Selection"), // get the select
+        selection = madeSelection.options[madeSelection.selectedIndex].value, // get the selected option
+        textBox = document.getElementById('textBoxHtml'),
+        value = parseFloat(value);
+		
+    if (!isNaN(value)) {
+        switch (selection) {
+           
+            case "c":
+                var x = (value * 9/5)+32;
+				var y = value + 273.15;
+				var buffer = x + "F = "+ y +"K"; //"" to make sure it is a string
+                textBox.value = buffer;
+                break;
+            case "f":
+                var x = (value-32)*5/9;
+				var y = (value-32)*5/9 + 273.15;
+				var buffer = x + "C = "+ y+"K"; //"" to make sure it is a string
+                textBox.value = buffer;
+                break;
+            case "k":
+                var x = (value-273.15)*9/5 + 32;
+				var y = value - 273.15;
+				var buffer = x + "F = "+ y+"C"; //"" to make sure it is a string
+                textBox.value = buffer;
+                break;
+            default:
+                x = 0;
+                break;
+        }
+    }
+    conversion.value = x;
+}
+</script>
+
+
+
+
+</body>
+
+
+</html>
